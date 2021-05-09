@@ -11,8 +11,7 @@ var slingShot;
 var polygon_img, backgroundImg;
 
 function preload(){
-  getBackgroundImage();
-  polygon_img=loadImage("images/polygon.png");
+  polygon_img=loadImage("polygon.png");
   
 }
 function setup() {
@@ -26,7 +25,6 @@ function setup() {
  
   //level one
   block1 = new Block(300,275,30,40);
-  console.log(block1);
   block2 = new Block(330,275,30,40);
   block3 = new Block(360,275,30,40);
   block4 = new Block(390,275,30,40);
@@ -64,7 +62,7 @@ function setup() {
   polygon = Bodies.circle(50,200,20);
   World.add(world,polygon);
   
-  slingShot = new Slingshot(this.polygon,{x:100,y:200});
+  slingShot = new SlingShot(this.polygon,{x:100,y:200});
 
 }
 function draw() {
@@ -72,11 +70,7 @@ function draw() {
   if(backgroundImg)
     background(backgroundImg);
   //Engine.update(engine);
-  text(mouseX + ',' + mouseY, 10, 15);
-  textSize(20);
-  fill("lightyellow");
   text("Drag the polygon to destroy the blocks",300,30);
-  text("SCORE : "+score,750,40);
   textSize(10);
   text("Press Space to get a second Chance to Play!!",650 ,350);
   ground.display();
@@ -134,4 +128,3 @@ function keyPressed(){
       slingShot.attach(this.polygon);
   }
 }
-
