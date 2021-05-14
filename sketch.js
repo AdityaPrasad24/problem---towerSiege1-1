@@ -16,7 +16,7 @@ function preload(){
 }
 function setup() {
   createCanvas(900,400);
-  background(black);
+  background('black');
   engine = Engine.create();
   world = engine.world;
   Engine.run(engine);
