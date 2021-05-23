@@ -8,7 +8,7 @@ var holder,polygon,ground;
 var stand1,stand2;
 var polygon;
 var slingShot;
-var polygon_img, backgroundImg;
+var polygon_img;
 
 function preload(){
   polygon_img=loadImage("polygon.png");
@@ -67,9 +67,7 @@ function setup() {
 
 }
 function draw() {
-  //background(56,44,44); 
-  if(backgroundImg)
-    background(backgroundImg);
+  background(56,44,44); 
   //Engine.update(engine);
   text("Drag the polygon to destroy the blocks",300,30);
   textSize(10);
